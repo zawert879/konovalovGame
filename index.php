@@ -43,7 +43,7 @@ if(count($playerDire->getUnits()) !=10 && count($playerRadiant->getUnits()) !=10
 	while ($playerRadiant->getAllLive() !=0 && $playerDire->getAllLive() !=0) {
 
 
-		for ($i = 0; $i < 2; $i++) {
+		for ($i = 0; $i < 10; $i++) {
 			$playerDire->atack($i,$playerRadiant);
 			$playerRadiant->atack($i,$playerDire);
 		}
