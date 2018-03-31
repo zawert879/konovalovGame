@@ -39,15 +39,14 @@
 				$unitsDire[] =new $className();			
 			}
 		}
-		// var_dump($unitsDire);
-		// var_dump($unitsRadiant);
+
 		$playerRadiant->setUnits($unitsRadiant);
 		$playerDire->setUnits($unitsDire);
 
 
 ///////////////////////////////fight/////////////////////////
 
-		if(count($playerDire->getUnits()) !=2 && count($playerRadiant->getUnits()) !=2){
+		if(count($playerDire->getUnits()) !=10 && count($playerRadiant->getUnits()) !=10){
 			echo '<h2 class="center"> ты как на войну собрался,собери полную команду,придурок!!! </h2>';
 		}
 		else {
@@ -71,9 +70,11 @@
 
 					if($unitsDire[$keyDire]->atack($playerRadiant)){
 						echo '<tr><td colspan="2" class="red white-text" >Юнит игрока '.$playerDire->getTeam()." мертв </td></tr>";
+						$playerDire->removeUnit($unitsDire[$keyDire]);
 					}
 					if($unitsRadiant[$keyRadiant]->atack($playerDire)){
 						echo '<tr><td colspan="2" class="red white-text" >Юнит игрока '.$playerRadiant->getTeam()." мертв</td></tr>";
+						$playerRadiant->removeUnit($unitsRadiant[$keyRadiant]);
 					}
 					echo "<tr>";
 					echo'<td> '.$playerRadiant->getTeam()."=".$playerRadiant->getAllLive()."</td>";

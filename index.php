@@ -32,12 +32,26 @@
 								<option value="Elf\Archer">Лучник</option>
 								<option value="Elf\Warrior">Воин</option>
 							</optgroup>
+							<optgroup label="Орк">
+								<option value="Orc\Big">Большой</option>
+								<option value="Orc\Small">Малый</option>
+							</optgroup>
+							<optgroup label="Независымый Орк">
+								<option value="IndependentOrc\Medium">Средний</option>
+							</optgroup>		
+							<optgroup label="Гном">
+								<option value="Gnome\Warrior">Воин</option>
+							</optgroup>		
+							<optgroup label="Колдун">
+								<option value="Witch\Warrior">Воин</option>
+							</optgroup>			
 						</select>
+
 						<label>Персонаж</label>
 					</div>
-
+					<?php for ($i = 1; $i < 11; $i++) { ?>
 					<div class="input-field  s3">
-						<select name="unitRadiant2">
+						<select name="<?php echo 'unitRadiant'.$i ?>">
 							<optgroup label="Человек">
 								<option value="Humen\Warrior">Воин</option>
 								<option value="Humen\Archer">Лучник</option>
@@ -47,18 +61,33 @@
 								<option value="Elf\Archer">Лучник</option>
 								<option value="Elf\Warrior">Воин</option>
 							</optgroup>
+							<optgroup label="Орк">
+								<option value="Orc\Big">Большой</option>
+								<option value="Orc\Small">Малый</option>
+							</optgroup>
+							<optgroup label="Независымый Орк">
+								<option value="IndependentOrc\Medium">Средний</option>
+							</optgroup>		
+							<optgroup label="Гном">
+								<option value="Gnome\Warrior">Воин</option>
+							</optgroup>		
+							<optgroup label="Колдун">
+								<option value="Witch\Warrior">Воин</option>
+							</optgroup>			
 						</select>
 						<label>Персонаж</label>
 					</div>
+					<?php } ?>
 				</div>
 
 
 				<div class="input-field col s6">
 					<input placeholder="Name" id="first_name" type="text" name="nameDire" class="validate">
 					<label for="first_name">Name Dire</label>
+					<?php for ($i = 0; $i < 11; $i++) { ?>
 
 					<div class="input-field  s3">
-						<select name="unitDire1">
+						<select name="<?php echo 'unitDire'.$i; ?>">
 							<optgroup label="Человек">
 								<option value="Humen\Warrior">Воин</option>
 								<option value="Humen\Archer">Лучник</option>
@@ -68,37 +97,37 @@
 								<option value="Elf\Archer">Лучник</option>
 								<option value="Elf\Warrior">Воин</option>
 							</optgroup>
+							<optgroup label="Орк">
+								<option value="Orc\Big">Большой</option>
+								<option value="Orc\Small">Малый</option>
+							</optgroup>
+							<optgroup label="Независымый Орк">
+								<option value="IndependentOrc\Medium">Средний</option>
+							</optgroup>		
+							<optgroup label="Гном">
+								<option value="Gnome\Warrior">Воин</option>
+							</optgroup>		
+							<optgroup label="Колдун">
+								<option value="Witch\Warrior">Воин</option>
+							</optgroup>			
 						</select>
 						<label>Персонаж</label>
 					</div>
-					<div class="input-field  s3">
-						<select name="unitDire2">
-							<optgroup label="Человек">
-								<option value="Humen\Warrior">Воин</option>
-								<option value="Humen\Archer">Лучник</option>
-								<option value="Humen\Rider">Всадник</option>
-							</optgroup>
-							<optgroup label="Эльф">
-								<option value="Elf\Archer">Лучник</option>
-								<option value="Elf\Warrior">Воин</option>
-							</optgroup>
-						</select>
-						<label>Персонаж</label>
-					</div>
+					<?php } ?>
 				</div>
 			</div>
 			<button class="btn waves-effect waves-light" type="submit" name="action">Submit
 				<i class="material-icons right">send</i>
 			</button>
 		</form>
-</div>
+	</div>
 
-<script type="text/javascript">
-	
+	<script type="text/javascript">
 
-	$(document).ready(function(){
-		$('select').formSelect();
-	});
-</script>
+
+		$(document).ready(function(){
+			$('select').formSelect();
+		});
+	</script>
 </body>
 </html>
