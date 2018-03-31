@@ -3,7 +3,7 @@
 
 class Unit{
 
-    public function atack($player){
+    public function atack($player,$my){
        
         if ($this->live > 0 ){
             /** @var Unit $enemyUnit */
@@ -12,9 +12,9 @@ class Unit{
             $enemyUnit = $enemyUnits[$key];
           
             $damage = $enemyUnit->getArmor() - $this->getAtack()* $this->getSpeed();
-           
             if ($damage < 0) {
                 $live = $enemyUnit->getLive() + $damage;
+
                 if ($live < 0) {
                     $live = 0;
                 }
@@ -25,7 +25,7 @@ class Unit{
         }
     }
 
-    protected $live =1000;
+    protected $live =50;
     protected $atack;
     protected $armor;
     protected $speed;

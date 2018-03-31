@@ -68,17 +68,17 @@
 					$keyDire = array_rand($unitsDire);
 					$keyRadiant = array_rand($unitsRadiant);
 
-					if($unitsDire[$keyDire]->atack($playerRadiant)){
+					if($unitsDire[$keyDire]->atack($playerRadiant,$playerDire)){
 						echo '<tr><td colspan="2" class="red white-text" >Юнит игрока '.$playerDire->getTeam()." мертв </td></tr>";
 						$playerDire->removeUnit($unitsDire[$keyDire]);
 					}
-					if($unitsRadiant[$keyRadiant]->atack($playerDire)){
+					if($unitsRadiant[$keyRadiant]->atack($playerDire,$playerDire)){
 						echo '<tr><td colspan="2" class="red white-text" >Юнит игрока '.$playerRadiant->getTeam()." мертв</td></tr>";
 						$playerRadiant->removeUnit($unitsRadiant[$keyRadiant]);
 					}
 					echo "<tr>";
-					echo'<td> '.$playerRadiant->getTeam()."=".$playerRadiant->getAllLive()."</td>";
-					echo"<td>".$playerDire->getTeam()."=".$playerDire->getAllLive()."</td>";
+					echo'<td> '.$playerRadiant->getTeam()." отряд =".count($playerRadiant->getUnits())."жизнь=".$playerRadiant->getAllLive()."</td>";
+					echo"<td>".$playerDire->getTeam()." отряд =".count($playerDire->getUnits())."жизнь=".$playerDire->getAllLive()."</td>";
 					echo "</tr>";
 				}
 
