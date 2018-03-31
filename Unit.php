@@ -1,14 +1,38 @@
 <?php
-class Unit{
-	
-	protected $live;
-	protected $atack;
-	protected $armor;
-	protected $speed;
 
-	public function __construct()
+
+class Unit{
+
+    public function atack($player){
+       
+        if ($this->live > 0 ){
+            /** @var Unit $enemyUnit */
+            $enemyUnits = $player->getUnits();
+            $key = array_rand($enemyUnits);
+            $enemyUnit = $enemyUnits[$key];
+          
+            $damage = $enemyUnit->getArmor() - $this->getAtack()* $this->getSpeed();
+           
+            if ($damage < 0) {
+                $live = $enemyUnit->getLive() + $damage;
+                if ($live < 0) {
+                    $live = 0;
+                }
+                $enemyUnit->setLive($live);
+            }
+        }else {
+            return 1;
+        }
+    }
+
+    protected $live =1000;
+    protected $atack;
+    protected $armor;
+    protected $speed;
+
+    public function __construct()
     {
-        
+
         // echo 'hello i Unit';
     }
 

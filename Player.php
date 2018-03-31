@@ -1,31 +1,8 @@
 <?php 
+
 class Player{
 
-	public function atack($unitNo,$player){
-		/** @var Unit $unit */
-		$unit = $this->units[$unitNo];
-			
-		if ($unit->getLive() > 0 ){
-			/** @var Unit $enemyUnit */
-			$enemyUnits = $player->getUnits();
 
-			$key = array_rand($enemyUnits);
-			$enemyUnit = $enemyUnits[$key];
-			$damage = $enemyUnit->getArmor() - $unit->getAtack()* $unit->getSpeed();
-
-			if ($damage < 0) {
-
-				$live = $enemyUnit->getLive() + $damage;
-				if ($live < 0) {
-					$live = 0;
-				}
-				$enemyUnit->setLive($live);
-				
-
-			}
-		}
-
-	}
 	public function getAllLive(){
 		$live=0;
 		foreach($this->units as $unit){
@@ -80,5 +57,21 @@ class Player{
     	$this->team = $team;
 
     	return $this;
+    }
+    /**
+     * @param Unit 
+     */
+    public function addUnit($unit){
+
+    	$this->units[] =$unit; 
+    }
+    public function removeUnit($unit){
+
+    	$key = array_search($unit, $this->units, true);
+        if ($key === false) {
+            return false;
+        }
+        unset($this->units[$key]);
+        return true;
     }
 }
