@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Можно 5 </title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+	<div class="row">
+		<form class="col s12" action="start.php" method="post">
+			<div class="row">
+				<div class="input-field col s6">
+					<input placeholder="Name" id="first_name" type="text" name="nameRadiant" class="validate">
+					<label for="first_name">Name Radiant</label>
+
+					<div class="input-field  s3">
+						<select name="unitRadiant1">
+							<optgroup label="Человек">
+								<option value="Humen\Warrior">Воин</option>
+								<option value="Humen\Archer">Лучник</option>
+								<option value="Humen\Rider">Всадник</option>
+							</optgroup>
+							<optgroup label="Эльф">
+								<option value="Elf\Archer">Лучник</option>
+								<option value="Elf\Warrior">Воин</option>
+							</optgroup>
+						</select>
+						<label>Персонаж</label>
+					</div>
+
+					<div class="input-field  s3">
+						<select name="unitRadiant2">
+							<optgroup label="Человек">
+								<option value="Humen\Warrior">Воин</option>
+								<option value="Humen\Archer">Лучник</option>
+								<option value="Humen\Rider">Всадник</option>
+							</optgroup>
+							<optgroup label="Эльф">
+								<option value="Elf\Archer">Лучник</option>
+								<option value="Elf\Warrior">Воин</option>
+							</optgroup>
+						</select>
+						<label>Персонаж</label>
+					</div>
+				</div>
+
+
+				<div class="input-field col s6">
+					<input placeholder="Name" id="first_name" type="text" name="nameDire" class="validate">
+					<label for="first_name">Name Dire</label>
+
+					<div class="input-field  s3">
+						<select name="unitDire1">
+							<optgroup label="Человек">
+								<option value="Humen\Warrior">Воин</option>
+								<option value="Humen\Archer">Лучник</option>
+								<option value="Humen\Rider">Всадник</option>
+							</optgroup>
+							<optgroup label="Эльф">
+								<option value="Elf\Archer">Лучник</option>
+								<option value="Elf\Warrior">Воин</option>
+							</optgroup>
+						</select>
+						<label>Персонаж</label>
+					</div>
+					<div class="input-field  s3">
+						<select name="unitDire2">
+							<optgroup label="Человек">
+								<option value="Humen\Warrior">Воин</option>
+								<option value="Humen\Archer">Лучник</option>
+								<option value="Humen\Rider">Всадник</option>
+							</optgroup>
+							<optgroup label="Эльф">
+								<option value="Elf\Archer">Лучник</option>
+								<option value="Elf\Warrior">Воин</option>
+							</optgroup>
+						</select>
+						<label>Персонаж</label>
+					</div>
+				</div>
+			</div>
+			<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+				<i class="material-icons right">send</i>
+			</button>
+		</form>
+</div>
+
+<script type="text/javascript">
+	
+
+	$(document).ready(function(){
+		$('select').formSelect();
+	});
+</script>
+</body>
+</html>
